@@ -1,0 +1,12 @@
+.url-input-item {
+  .url-input-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    .delete-icon {
+      margin-left: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}

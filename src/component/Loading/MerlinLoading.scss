@@ -1,0 +1,17 @@
+.merlin-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1001;
+    transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.mask {
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+        transform: translate3d(0,0,0);
+    }
+}

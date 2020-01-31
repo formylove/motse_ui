@@ -1,0 +1,29 @@
+#root {
+  height: 100%;
+}
+
+.title-dark {
+  color: #222;
+}
+
+.sub-title-dark {
+  color: #666;
+}
+
+.title-light {
+  color: #fff;
+}
+
+.sub-title-light {
+  color: #fff;
+}
+
+.disable {
+  .title-dark {
+    color: #aaa;
+  }
+  .sub-title-dark {
+    color: #aaa;
+  }
+}
+

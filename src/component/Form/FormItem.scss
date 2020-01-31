@@ -1,0 +1,29 @@
+.form-item {
+  margin-bottom: 20px;
+  .form-item-container {
+    display: flex;
+    width: 100%;
+    &:last-child() {
+      margin-bottom: 0;
+    }
+    .form-title {
+      width: 25%;
+      margin-right: 30px;
+      line-height: 32px;
+    }
+    .form-content {
+      flex: 1;
+      .ant-select {
+        width: 100%;
+      }
+    }
+  }
+  .error-tip {
+    margin-left: calc(25% + 30px);
+    color: red;
+  }
+  .has-error {
+      background-color: #fff;
+      border-color: #f5222d;
+  }
+}

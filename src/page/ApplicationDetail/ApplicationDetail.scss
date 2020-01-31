@@ -1,0 +1,55 @@
+.application-detail {
+  background: #fff;
+  &-header {
+    padding: 40px 140px 20px 140px;
+    background: linear-gradient(to left, #2988e1, #2565cb);
+    color: #fff;
+    .top-control {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      margin-bottom: 30px;
+      width: 300px;
+      cursor: pointer;
+      .left-icon {
+          margin-right: 10px;
+      }
+    }
+    .application-info {
+      display: flex;
+      align-items: center;
+      padding-bottom: 20px;
+      .type-icon {
+        font-size: 40px;
+        color: #333;
+        background: #fff;
+        border: 1px solid #eee;
+        padding: 20px;
+        border-radius: 4px;
+        margin-right: 20px;
+      }
+      .right-container {
+        flex: 1;
+        .title {
+          font-size: 30px;
+        }
+        .info-container {
+          display: flex;
+          .application-type {
+            margin-right: 80px;
+            min-width: 220px;
+          }
+          .client-id {
+            &-title {
+              font-weight: bold;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  &-tab-container {
+    padding: 20px 140px 40px 140px;
+  }
+}

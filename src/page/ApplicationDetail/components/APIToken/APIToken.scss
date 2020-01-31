@@ -1,0 +1,17 @@
+.application-api-token {
+    .add-api-token {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    .tip {
+      margin-bottom: 20px;
+    }
+    .button-container {
+      button {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+}
