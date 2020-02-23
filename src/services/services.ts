@@ -9,6 +9,7 @@ import {
   RULES_BASE_URL,
   GET_RULES,
   GET_RULE_BASES,
+  ADD_CARD,
 } from '../common/api';
 import * as UserMgmtRes from './model/UserMgmtRes';
 import * as ApplicationMgmtRes from './model/ApplicationMgmtRes';
@@ -20,6 +21,10 @@ export default class Services {
 
   public static createApplication(payload: CreateApplicationFormInterface) {
     return RESOURCE.post<ApplicationMgmtRes.Res>(ADD_APPLICATION, payload);
+  }
+
+  public static createCard(payload: CreateCardFormInterface) {
+    return RESOURCE.post<ApplicationMgmtRes.Res>(ADD_CARD, payload);
   }
 
   public static updateApplication(payload: ApplicationMgmtRes.Application) {

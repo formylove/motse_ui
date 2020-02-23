@@ -87,5 +87,5 @@
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2"
   },
-  "proxy": "http://test-shufeng-bankend.thizgroup.com:8082/"
+  "proxy": "http://127.0.0.1:8080/"
 }

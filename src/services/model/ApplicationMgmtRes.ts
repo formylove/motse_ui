@@ -10,6 +10,17 @@ export interface Application {
   ssoProvider: string;
 }
 
+export interface Card {
+  cname: string[];
+  ename: string[];
+  taxonomy: string;
+  facts: string[];
+  portraits: string[];
+  links: string[];
+  description: string;
+  reference: number[];
+}
+
 export interface Applications {
   data: Application[];
   errCode: number;

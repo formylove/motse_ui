@@ -4,6 +4,8 @@ import React, {FunctionComponent, useEffect} from 'react';
 import {Router, Route, Switch, Redirect, useLocation} from 'react-router-dom';
 import {syncHistoryWithStore} from 'mobx-react-router';
 import {Provider} from 'mobx-react';
+import { Row, Col } from 'antd';
+
 
 import './App.scss';
 
@@ -12,6 +14,9 @@ import {history as browserHistory} from './common/history';
 import {routerStore} from './store/routerStore';
 import * as mobxStore from './store/index';
 import NotFound from './page/NotFound/NotFound';
+import { Link } from "react-router-dom";
+import SideMenu from "./layout/components/SideMenu/SideMenu";
+import Header from "./layout/components/Header/Header";
 import {MerlinLoading} from './component/Loading/MerlinLoading';
 import {useStores, observer, getUserSession, navigate} from './common/util';
 import {AppStore} from './store/appStore';
@@ -21,12 +26,17 @@ const history = syncHistoryWithStore(browserHistory, routerStore);
 const App: React.FC = () => {
   return (
     <Provider {...mobxStore}>
-      <Loading />
       <Router history={history}>
-        <Switch>
-          <Redirect exact from="/" to="/login" />
-          <LoginedFilter />
-        </Switch>
+        <Header></Header>
+        <Row>
+          <Col span={4}><SideMenu /></Col>
+          <Col span={20}>        
+          <Switch>
+            <Redirect exact from="/" to="/home" />
+            <LoginedFilter />
+          </Switch></Col>
+        </Row>
+
       </Router>
     </Provider>
   );
@@ -42,12 +52,12 @@ const Loading = observer(() => {
 export default App;
 
 const LoginedFilter: FunctionComponent = () => {
-  useEffect(() => {
-    const user = getUserSession();
-    if (window.location.pathname !== '/login' && !(user && user.loginToken)) {
-      navigate('/login');
-    }
-  });
+  // useEffect(() => {
+  //   const user = getUserSession();
+  //   if (false ) {
+  //     navigate('/login');
+  //   }
+  // });
 
   return (
     <Switch>
@@ -61,7 +71,7 @@ const LoginedFilter: FunctionComponent = () => {
           />
         ))
       }
-      <Route path="*" component={NotFound} />
+      {/* <Route path="*" component={NotFound} /> */}
     </Switch>
   );
 };

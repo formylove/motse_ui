@@ -90,6 +90,17 @@ interface CreateApplicationFormInterface {
   ssoProvider?: string;
 }
 
+interface CreateCardFormInterface {
+  cname?: string;
+  ename?: string;
+  taxonomy?: string;
+  facts?: string;
+  portraits?: string;
+  links?: string;
+  description?: string;
+  reference?: number;
+}
+
 // error message interface
 interface ErrorMessage {
   message?: string;

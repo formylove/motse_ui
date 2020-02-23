@@ -47,7 +47,7 @@ export default class AddApplication extends Component<AddApplicationProps> {
 
 interface ContentItemProps {
   title: string;
-}
+} 
 
 const ContentItem: FunctionComponent<ContentItemProps> = ({title, children}) => (
   <div className="add-application-content">

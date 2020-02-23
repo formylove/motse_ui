@@ -1,6 +1,7 @@
 import {VERSION} from './constants';
 
 export const ADD_APPLICATION = `/api/${VERSION}/applications`;
+export const ADD_CARD = `/cards`;
 export const GET_APPLICATIONS_LIST = `/api/${VERSION}/applications/`;
 export const GET_APPLICATION_DETAIL = `/api/${VERSION}/applications/:applicationId`;
 
