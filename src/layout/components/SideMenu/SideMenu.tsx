@@ -7,6 +7,7 @@ import './SideMenu.scss';
 const  {SubMenu} = Menu
 
 const SideMenu: FunctionComponent = () => {
+
   return (
     <Menu style={{ width: 256 }} mode="vertical">
       <SubMenu
@@ -18,7 +19,7 @@ const SideMenu: FunctionComponent = () => {
           </span>
         }
       >
-        <Menu.Item key="1"><Link to='/cards/botany/create'>生物卡片</Link></Menu.Item>
+        <Menu.Item key="1" ><Link to='/cards/botany/create'>生物卡片</Link></Menu.Item>
           <Menu.Item key="2">食物卡片</Menu.Item>
           <Menu.Item key="3">车</Menu.Item>
           <Menu.Item key="4">数读</Menu.Item>

@@ -15,6 +15,7 @@ export interface Card {
   ename: string[];
   taxonomy: string;
   facts: string[];
+  attrs: string[];
   portraits: string[];
   links: string[];
   description: string;
