@@ -1,6 +1,6 @@
 import queryString from 'query-string';
 import 'whatwg-fetch';
-import {userStore} from '../../store';
+import { getUserToken } from "../../common/util";
 
 /**
  * 实例化Error对象
@@ -110,7 +110,7 @@ class Resource extends ResourceAbs {
   protected async request<T extends ResourceDataError>(url: string, params: RequestInit): Promise<T> {
     const defaultHeaders = {
       'Content-Type': 'application/json',
-      'Authorization': userStore.getToken(),
+      'Authorization': `Bearer ${getUserToken()}`,
     };
     params.headers = Object.assign({}, defaultHeaders, params.headers);
     const response: Response = await fetch(this.domain + url, params);

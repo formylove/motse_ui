@@ -24,12 +24,18 @@ export class CreateCardStore {
   @observable isSucceed = false;
   @observable cname = '';
   @observable isVisibleOfModal = false;
+  @observable dimensions:string[] = [];
 
   @action
   init() {
     this.isSucceed = false;
     this.currentStep = 1;
     this.cardData = {};
+  }
+
+  @action
+  handleModalCancel() {
+    this.isVisibleOfModal = false;
   }
 
   @action
@@ -43,9 +49,18 @@ export class CreateCardStore {
   }
 
   @action
-  createAttrSettingBox(e: any) {
-    console.log(this)
-    this.toggleModal(true)
+  createAttrSetting(value: any) {
+    console.log(value)
+    if(value=='add'){
+      this.toggleModal(true)
+      Services.getUnitDimensions().then((resp) => {
+        runInAction(() => {
+          this.dimensions = resp.data;
+        });
+      }).catch((e) => {
+        message.error(e.message);
+      });
+    }
   }
 
 
@@ -100,6 +115,23 @@ export class CreateCardStore {
         navigateInLayout('/home');
       },
     });
+  }
+
+
+  @action
+  getDimensions = (): void => {
+    Services.getUnitDimensions().then((resp) => {
+      runInAction(() => {
+        this.dimensions=resp.data;
+      });
+    }).catch((e) => {
+      message.error(e.message);
+    });
+  }
+
+  @action
+  createAttribte = (): void => {
+
   }
 
   createCard() {

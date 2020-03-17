@@ -20,7 +20,13 @@ interface CreateCardProps {
 
 @inject('createCardStore')
 @observer
-export default class CreateCard extends Component<CreateCardProps> {
+class CreateCard extends Component<CreateCardProps> {
+  constructor(props:any) {
+    super(props);}
+
+
+
+
   render() {
     const { createCardStore } = this.props;
     return (
@@ -65,7 +71,7 @@ export default class CreateCard extends Component<CreateCardProps> {
     );
   }
 }
-
+export default CreateCard
 interface ContentItemProps {
   title: string;
 }

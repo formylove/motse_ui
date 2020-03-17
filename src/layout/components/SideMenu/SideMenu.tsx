@@ -23,8 +23,9 @@ const SideMenu: FunctionComponent = () => {
           <Menu.Item key="2">食物卡片</Menu.Item>
           <Menu.Item key="3">车</Menu.Item>
           <Menu.Item key="4">数读</Menu.Item>
-          <Menu.Item key="4">人物</Menu.Item>
-          <Menu.Item key="4">句子</Menu.Item>
+          <Menu.Item key="5">人物</Menu.Item>
+          <Menu.Item key="6">句子</Menu.Item>
+          <Menu.Item key="7">Memo</Menu.Item>
       </SubMenu>
       <SubMenu
         key="sub2"

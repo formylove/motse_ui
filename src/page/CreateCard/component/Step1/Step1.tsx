@@ -42,7 +42,7 @@ const Step1: FunctionComponent = () => {
         </Col>
       </Row>
       <Row className='taxonomy'>
-        <Select defaultValue={'add'} style={{ width: 120 }} onChange={(e: any) => {createCardStore.createAttrSettingBox(e)}}>
+        <Select defaultValue={'add'} style={{ width: 120 }} onSelect={(value: any) => { createCardStore.createAttrSetting(value)}}>
           <Option value="life">寿命</Option>
           <Option value="height">高度</Option>
           <Option value="add">添加属性</Option>
@@ -51,10 +51,18 @@ const Step1: FunctionComponent = () => {
       <Modal
         title="创建属性"
         visible={createCardStore.isVisibleOfModal}
+        onCancel={()=>createCardStore.handleModalCancel()}
       >
         <p>Some contents...</p>
-        <p>Some contents...</p>
-        <p>Some contents...</p>
+        <Input placeholder="名称" onKeyUp={(e) => createCardStore.addCnameLabel(e)} value={createCardStore.cname} onChange={createCardStore.setCnameInput} />
+
+        <Select style={{ width: 120 }}>
+        {
+            createCardStore.dimensions.map((item)=>{
+           return <Option value={item}>{item}</Option>
+            })
+        }
+        </Select>
       </Modal>
     </form>
   );

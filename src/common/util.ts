@@ -1,7 +1,7 @@
 import React from 'react';
 import {routerStore} from '../store/routerStore';
 import {MobXProviderContext} from 'mobx-react';
-import {VERSION, MERLIN} from './constants';
+import { TOKEN} from './constants';
 
 export function navigate(path: string, params?: object) {
   if (!path) {
@@ -13,9 +13,9 @@ export function navigate(path: string, params?: object) {
     state: params,
   });
 }
-
+ 
 export function navigateInLayout(path: string, params?: object) {
-  navigate(`/${VERSION}${path}`, params);
+  navigate(`${path}`, params);
 }
 
 export function useStores<T>(name: string): T {
@@ -25,7 +25,15 @@ export function useStores<T>(name: string): T {
 export {observer} from 'mobx-react';
 
 export function getUserSession() {
-  return JSON.parse(localStorage.getItem(MERLIN) as string);
+  return JSON.parse(localStorage.getItem(TOKEN) as string);
+}
+
+export function getUserToken() {
+  return getUserSession().accessToken.accessToken;
+}
+
+export function getUserInfo() {
+  return getUserSession().idToken.claims;
 }
 
 export function removeEmpty(arr: Array<any>){   
