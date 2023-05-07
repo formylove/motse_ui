@@ -87,7 +87,7 @@
     ]
   },
   "devDependencies": {
-    "commitizen": "^4.0.3",
+    "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.0.2"
   },
   "proxy":  "http://127.0.0.1:8888/"
